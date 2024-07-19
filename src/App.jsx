@@ -8,7 +8,8 @@ function App() {
     return (
         <>
           <Marquee element={element}
-                   width={100}/>
+                   width={100}
+                   id={"marquee-1"}/>
         </>
     )
 }
