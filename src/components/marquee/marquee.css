@@ -1,3 +1,14 @@
 #com-clxxthyng-marquee {
-    
+    position: relative;
+    width: 100vw;
+}
+
+#com-clxxthyng-marquee > div {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#com-clxxthyng-marquee > div > div {
+    flex-shrink: 0;
 }

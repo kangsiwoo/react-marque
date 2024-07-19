@@ -1,31 +1,39 @@
-import PropTypes from 'prop-types';
+import { useEffect, useRef } from 'react'
+import './marquee.css'
+import PropTypes from "prop-types";
 
-const Marquee = ({ element, width, id }) => {
+const Marquee = ({ text, speed }) => {
+    const marqueeRef = useRef(null)
 
-    const count = Math.ceil(window.innerWidth / width)
-    console.log(count)
-    const elements = []
-    for (let i = 0; i < count; i++) {
-        elements.push(element)
-    }
+    useEffect(() => {
+        const marqueeElement = marqueeRef.current
+        let scrollAmount = 0
+
+        const scrollMarquee = () => {
+            scrollAmount -= 1;
+            if (scrollAmount <= -marqueeElement.clientWidth) {
+                scrollAmount = marqueeElement.parentElement.clientWidth
+            }
+            marqueeElement.style.transform = `translateX(${scrollAmount}px)`
+        }
+
+        const intervalId = setInterval(scrollMarquee, speed)
+
+        return () => clearInterval(intervalId)
+    }, [speed])
 
     return (
         <div id="com-clxxthyng-marquee">
-            <div style={{width: `${width}px`}}>
-                {
-                    elements.map((e, index) => (
-                        <div key={`${id}-${index}`}>{e}</div>
-                    ))
-                }
+            <div ref={marqueeRef}>
+                <div>{text}</div>
             </div>
         </div>
-    );
+    )
 }
 
 Marquee.propTypes = {
-    element: PropTypes.node.isRequired,
-    width: PropTypes.number.isRequired,
-    id: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    speed: PropTypes.number.isRequired,
 }
 
 export default Marquee;
