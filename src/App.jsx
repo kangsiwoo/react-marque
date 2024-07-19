@@ -4,7 +4,7 @@ import './index.css';
 const App = () => {
     return (
         <div className="App">
-            <Marquee text="여기에 당신의 문구를 입력하세요." speed={1} />
+            <Marquee text="Enter your text." speed={10} gap={20} />
         </div>
     );
 }
