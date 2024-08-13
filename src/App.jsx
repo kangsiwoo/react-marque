@@ -1,10 +1,10 @@
-import Marquee from './components/marquee/marquee.jsx';
+import Marquee from './components/marquee/marquee.tsx';
 import './index.css';
 
 const App = () => {
     return (
         <div className="App">
-            <Marquee text="Enter your text." speed={10} gap={20} />
+            <Marquee text="Sample." speed={10} gap={20} />
         </div>
     );
 }

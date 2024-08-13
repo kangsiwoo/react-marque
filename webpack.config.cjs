@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/components/marquee/marquee.jsx',
+    entry: './src/components/marquee/marquee.tsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',

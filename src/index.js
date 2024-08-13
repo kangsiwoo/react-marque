@@ -1,3 +1,3 @@
-import Marquee from "./components/marquee/marquee.jsx";
+import Marquee from "./components/marquee/marquee.tsx";
 
 export { Marquee };

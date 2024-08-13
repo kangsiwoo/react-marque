@@ -6,7 +6,7 @@
 ## Usage
 
 ```javascript
-import Marquee from './components/marquee/marquee.jsx';
+import Marquee from './components/marquee/marquee.tsx';
 
 const App = () => {
     return (

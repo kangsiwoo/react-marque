@@ -1,7 +1,7 @@
 #com-clxxthyng-marquee {
     position: relative;
     width: 100vw;
-    overflow: hidden; /* 추가 */
+    overflow: hidden
 }
 
 #com-clxxthyng-marquee > div {
